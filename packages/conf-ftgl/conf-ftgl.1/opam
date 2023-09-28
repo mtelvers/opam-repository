@@ -10,6 +10,11 @@ depexts: [
   ["libftgl-dev"] {os-family = "debian"}
   ["libftgl-devel"] {os-distribution = "mageia"}
   ["ftgl-devel"] {os-distribution = "fedora"}
+  ["ftgl"] {os = "freebsd"}
+  ["ftgl-dev"] {os-distribution = "alpine"}
+  ["ftgl-devel"] {os-family = "suse" | os-family = "opensuse"}
+  ["ftgl"] {os-distribution = "arch"}
+  ["ftgl-devel"] {os-distribution = "ol"}
 ]
 synopsis: "Virtual package relying on an ftgl system installation"
 description:
