@@ -10,6 +10,7 @@ depends: [
   "ocaml" {>= "4.12"}
   "alcotest" {with-test}
   "astring"
+  "merlin"
   "base-unix"
   "ptime"
   "odoc" {with-doc}
