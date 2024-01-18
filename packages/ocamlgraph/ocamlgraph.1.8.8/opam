@@ -39,6 +39,6 @@ depopts: [
 synopsis: "A generic graph library for OCaml"
 flags: light-uninstall
 url {
-  src: "https://github.com/backtracking/ocamlgraph/archive/refs/tags/v1.8.8.tar.gz"
-  checksum: "md5=b68de723e2d2342bae1b16f688e8cd12"
+  src: "https://raw.githubusercontent.com/dra27/opam-source-archives/ocamlgraph-temp/ocamlgraph-1.8.8.tar.gz"
+  checksum: "md5=9d71ca69271055bd22d0dfe4e939831a"
 }
