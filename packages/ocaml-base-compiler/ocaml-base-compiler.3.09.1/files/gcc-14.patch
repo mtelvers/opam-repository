@@ -1,0 +1,19 @@
+diff --git a/config/auto-aux/hasgot b/config/auto-aux/hasgot
+index 5014b90..9447cb0 100755
+--- a/config/auto-aux/hasgot
++++ b/config/auto-aux/hasgot
+@@ -1,6 +1,13 @@
+ #!/bin/sh
+ 
+-opts=""
++(echo "int main() { return 0; }") > hasgot.c
++$cc -Wno-implicit-function-declaration hasgot.c > /dev/null 2>/dev/null
++if test $? -eq 0 ; then
++  opts="-Wno-implicit-function-declaration";
++else
++  opts=""
++fi
++
+ libs="$cclibs"
+ args=$*
+ rm -f hasgot.c

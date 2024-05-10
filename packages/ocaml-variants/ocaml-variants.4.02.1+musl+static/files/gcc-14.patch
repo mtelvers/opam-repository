@@ -1,0 +1,47 @@
+diff --git a/config/auto-aux/hasgot b/config/auto-aux/hasgot
+index 53d5786..16cc638 100755
+--- a/config/auto-aux/hasgot
++++ b/config/auto-aux/hasgot
+@@ -14,6 +14,15 @@
+ #########################################################################
+ 
+ opts=""
++(echo "int main() { return 0; }") > hasgot.c
++for w in -Wno-implicit-function-declaration -Wno-implicit-int ; do
++  $cc $w hasgot.c > /dev/null 2>/dev/null
++  if test $? -eq 0 ; then
++    opts="$opts $w";
++  fi
++done
++rm hasgot.c
++
+ libs="$cclibs"
+ args=$*
+ rm -f hasgot.c
+diff --git a/config/auto-aux/runtest b/config/auto-aux/runtest
+index c8d7c43..419d0e4 100755
+--- a/config/auto-aux/runtest
++++ b/config/auto-aux/runtest
+@@ -13,10 +13,20 @@
+ #                                                                       #
+ #########################################################################
+ 
++opts=""
++(echo "int main() { return 0; }") > hasgot.c
++for w in -Wno-implicit-function-declaration -Wno-implicit-int ; do
++  $cc $w hasgot.c > /dev/null 2>/dev/null
++  if test $? -eq 0 ; then
++    opts="$opts $w";
++  fi
++done
++rm hasgot.c
++
+ if test "$verbose" = yes; then
+ echo "runtest: $cc -o tst $* $cclibs" >&2
+-$cc -o tst $* $cclibs || exit 100
++$cc $opts -o tst $* $cclibs || exit 100
+ else
+-$cc -o tst $* $cclibs 2> /dev/null || exit 100
++$cc $opts -o tst $* $cclibs 2> /dev/null || exit 100
+ fi
+ exec ./tst

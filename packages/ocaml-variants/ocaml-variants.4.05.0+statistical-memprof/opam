@@ -27,8 +27,11 @@ install: [make "install"]
 url {
   src: "https://github.com/jhjourdan/ocaml/archive/memprof_4.05.0.tar.gz"
 }
-patches: ["fix-gcc10.patch" "alt-signal-stack.patch"]
-extra-files: [ ["fix-gcc10.patch" "md5=3791e3c17d11ec0f246fc6c5c5e5e2f3"] ]
+patches: ["fix-gcc10.patch" "alt-signal-stack.patch" "gcc-14.patch"]
+extra-files: [
+  ["fix-gcc10.patch" "md5=3791e3c17d11ec0f246fc6c5c5e5e2f3"]
+  ["gcc-14.patch" "md5=7262fc142b0b83b10e8c8a727214dde0"]
+]
 available: !(os = "macos" & arch = "arm64")
 license: "QPL-1.0 AND LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 authors: [
