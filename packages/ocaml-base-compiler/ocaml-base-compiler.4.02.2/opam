@@ -44,7 +44,9 @@ url {
   src: "http://caml.inria.fr/pub/distrib/ocaml-4.02/ocaml-4.02.2.tar.gz"
   checksum: "md5=359ad0ef89717341767142f2a4d050b2"
 }
-patches: ["fix-gcc10.patch" "gpr1330.patch" "alt-signal-stack.patch"]
+patches: [
+  "fix-gcc10.patch" "gpr1330.patch" "alt-signal-stack.patch" "gcc-14.patch"
+]
 extra-files: [
   ["fix-gcc10.patch" "md5=d40cd243f53876ba0b7e181ac16836a9"]
 ]
@@ -58,3 +60,7 @@ extra-source "gpr1330.patch" {
   checksum: "sha256=594d4dd6c192fe77e9fc025674b51e3de74d70326b2e750a249a09eeded68716"
 }
 
+extra-source "gcc-14.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/eff7bff07907602bf67000231d7dba1ea03fccc2.patch"
+  checksum: "sha256=6a620e7d98577c5f6ab8b8200a048b56dd0aac299ef7f6379c7a0620c275db6b"
+}
