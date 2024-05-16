@@ -40,9 +40,10 @@ url {
   src: "https://caml.inria.fr/pub/distrib/ocaml-3.08/ocaml-3.08.0.tar.gz"
   checksum: "md5=c6ef478362295c150101cdd2efcd38e0"
 }
-patches: ["PIC.patch" "alt-signal-stack.patch"]
+patches: ["PIC.patch" "alt-signal-stack.patch" "3a425328d6.patch"]
+available: arch != "arm64" & arch != "arm32" & arch != "ppc64"
 extra-files: [
   ["PIC.patch" "md5=53aa5accaa1308e7b9eb434f47068a24"]
   ["alt-signal-stack.patch" "md5=eb6c71b1b8eb8d8ce38381252919d109"]
+  ["3a425328d6.patch" "md5=6beb311b5ce832cec76f3296d4a1ee88"]
 ]
-available: arch != "arm64" & arch != "arm32" & arch != "ppc64"

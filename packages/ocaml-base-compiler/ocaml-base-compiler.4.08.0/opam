@@ -40,13 +40,16 @@ post-messages: [
    to force a sequential build instead."
   {failure & jobs > 1 & os != "cygwin" & opam-version >= "2.0.5"}
 ]
-patches: ["fix-gcc10.patch" "alt-signal-stack.patch"]
-extra-files: [
-  ["fix-gcc10.patch" "md5=f406119ae0091835cdf158d7d0ff53f7"]
-  ["ocaml-base-compiler.install" "md5=3e969b841df1f51ca448e6e6295cb451"]
-]
+patches: ["alt-signal-stack.patch" "dcd52caed3.patch"]
 available: !(os = "macos" & arch = "arm64")
 extra-source "alt-signal-stack.patch" {
   src: "https://github.com/ocaml/ocaml/commit/17df117b4939486d3285031900587afce5262c8c.patch?full_index=1"
   checksum: "sha256=92d747e6a9edffbe178d7c356a271c34f1c9e7597548ae8d6defc0815c56315a"
+}
+extra-files: [
+  ["ocaml-base-compiler.install" "md5=3e969b841df1f51ca448e6e6295cb451"]
+]
+extra-source "dcd52caed3.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/dcd52caed3.patch"
+  checksum: "sha256=45778672867747b140e1cba98634d31b3ffb3f1f2a9a9af77b779b50d0b14ba5"
 }

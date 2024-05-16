@@ -46,8 +46,7 @@ url {
   src: "https://github.com/ocaml/ocaml/archive/4.03.0.tar.gz"
   checksum: "md5=4ddf4977de7708f11adad692c63e87ec"
 }
-patches: ["fix-gcc10.patch" "alt-signal-stack.patch"]
-extra-files: [ ["fix-gcc10.patch" "md5=4370afea8ee2dea768b0fcba52394a2f"] ]
+patches: ["alt-signal-stack.patch" "aca0d83530.patch" "ccd2d4c346.patch"]
 available: os = "linux" & arch = "x86_64"
 license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 authors: [
@@ -64,4 +63,12 @@ dev-repo: "git+https://github.com/ocaml/ocaml.git#4.03"
 extra-source "alt-signal-stack.patch" {
   src: "https://github.com/ocaml/ocaml/commit/a8b2cc3b40f5269ce8525164ec2a63b35722b22b.patch?full_index=1"
   checksum: "sha256=dea675165192cbac93aa89e43e22ad47f7e99b5ba118f27ad7e1846aa7a2a8d4"
+}
+extra-source "aca0d83530.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/aca0d83530.patch"
+  checksum: "sha256=57f994057a9ab5cbbd05b98d412ea637b771197913b32f2100fb481384501cb4"
+}
+extra-source "ccd2d4c346.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/ccd2d4c346.patch"
+  checksum: "sha256=9675accba3132ca5a0930870598984e8f0cfd1dcd33f7ae659dae3024a497fc8"
 }

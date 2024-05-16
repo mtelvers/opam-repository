@@ -36,13 +36,14 @@ install: [
   ["mkdir" "-p" "%{prefix}%/lib/ocaml/compiler-libs"]
   ["cp" "-r" "typing" "parsing" "utils" "%{prefix}%/lib/ocaml/compiler-libs/"]
 ]
-patches: ["pr5237.patch" "alt-signal-stack.patch"]
+patches: ["pr5237.patch" "alt-signal-stack.patch" "b49d2be0d0.patch"]
 url {
   src: "http://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.1.tar.gz"
   checksum: "md5=069aa55d40e548280f92af693f6c625a"
 }
+available: arch != "arm64" & arch != "arm32" & arch != "ppc64"
 extra-files: [
   ["pr5237.patch" "md5=ed296f21546aaea6cf62e6dc4ac2e28f"]
   ["alt-signal-stack.patch" "md5=6cf06614ad878607174bb7cb46a2eb80"]
+  ["b49d2be0d0.patch" "md5=0063071d82185bc691f4aee00ba0ad50"]
 ]
-available: arch != "arm64" & arch != "arm32" & arch != "ppc64"

@@ -40,8 +40,12 @@ url {
   src: "http://caml.inria.fr/pub/distrib/ocaml-4.02/ocaml-4.02.3.tar.gz"
   checksum: "md5=ef1a324608c97031cbd92a442d685ab7"
 }
-patches: ["fix-gcc10.patch" "gpr1330.patch" "alt-signal-stack.patch"]
-extra-files: [ ["fix-gcc10.patch" "md5=4516183897da9033f49dd291fa198b8c"] ]
+patches: [
+  "gpr1330.patch"
+  "alt-signal-stack.patch"
+  "2f0e1a0bad.patch"
+  "f6e290a03f.patch"
+]
 available: !(os = "macos" & arch = "arm64")
 license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
 authors: [
@@ -62,4 +66,12 @@ extra-source "alt-signal-stack.patch" {
 extra-source "gpr1330.patch" {
   src: "https://github.com/ocaml/ocaml/commit/bcc7a767279ff70518b3f4219cc0b9bffec7dd43.patch?full_index=1"
   checksum: "sha256=594d4dd6c192fe77e9fc025674b51e3de74d70326b2e750a249a09eeded68716"
+}
+extra-source "2f0e1a0bad.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/2f0e1a0bad.patch"
+  checksum: "sha256=eae868e9987e114e0db4e9f1d21eb5d7f32c57fe10ebaad6c14e347f3c2d3b7a"
+}
+extra-source "f6e290a03f.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/f6e290a03f.patch"
+  checksum: "sha256=642aabd569c2af02080aa38cd9261b1db17338843ab4f2550d6495f5301c0005"
 }

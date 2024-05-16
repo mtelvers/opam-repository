@@ -44,9 +44,11 @@ url {
   src: "http://caml.inria.fr/pub/distrib/ocaml-4.02/ocaml-4.02.0.tar.gz"
   checksum: "md5=8bba7e7d872083af1723dd450e07a5f4"
 }
-patches: ["fix-gcc10.patch" "gpr1330.patch" "alt-signal-stack.patch"]
-extra-files: [
-  ["fix-gcc10.patch" "md5=91a4a258611302bc57f4d9fadb7fc14d"]
+patches: [
+  "gpr1330.patch"
+  "alt-signal-stack.patch"
+  "4a52b43616.patch"
+  "69792e2c99.patch"
 ]
 available: !(os = "macos" & arch = "arm64") & arch != "ppc64"
 extra-source "alt-signal-stack.patch" {
@@ -56,4 +58,12 @@ extra-source "alt-signal-stack.patch" {
 extra-source "gpr1330.patch" {
   src: "https://github.com/ocaml/ocaml/commit/bcc7a767279ff70518b3f4219cc0b9bffec7dd43.patch?full_index=1"
   checksum: "sha256=594d4dd6c192fe77e9fc025674b51e3de74d70326b2e750a249a09eeded68716"
+}
+extra-source "4a52b43616.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/4a52b43616.patch"
+  checksum: "sha256=22d6b834734bf95591170fc004155a7a381715822fd010da81fe217eec288eb5"
+}
+extra-source "69792e2c99.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/69792e2c99.patch"
+  checksum: "sha256=810048ca28e83b9de3b89b8701dbfc08c827fbb5ef4f379f621699793ceec974"
 }

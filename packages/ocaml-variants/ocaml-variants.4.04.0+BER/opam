@@ -47,8 +47,12 @@ url {
   src: "https://github.com/metaocaml/ber-metaocaml/archive/ber-n104.tar.gz"
   checksum: "md5=e6b1da1b34a207c4995ce7123475a3b6"
 }
-patches: ["fix-gcc10.patch" "gpr1330.patch" "alt-signal-stack.patch"]
-extra-files: [ ["fix-gcc10.patch" "md5=8b0606a5733be21ee8ae2a19ce67059e"] ]
+patches: [
+  "gpr1330.patch"
+  "alt-signal-stack.patch"
+  "e92aee1f9e.patch"
+  "2ed032cf02.patch"
+]
 available: !(os = "macos" & arch = "arm64")
 extra-source "alt-signal-stack.patch" {
   src: "https://github.com/ocaml/ocaml/commit/6bcff7e6ce1a43e088469278eb3a9341e6a2ca5b.patch?full_index=1"
@@ -57,4 +61,12 @@ extra-source "alt-signal-stack.patch" {
 extra-source "gpr1330.patch" {
   src: "https://github.com/ocaml/ocaml/commit/db11f141a0e35c7fbaec419a33c4c39d199e2635.patch?full_index=1"
   checksum: "sha256=ba3e0b48250e66a08eef0a5162bfdea2e20e3cdefd098ee38f345ae8e8175ff4"
+}
+extra-source "e92aee1f9e.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/e92aee1f9e.patch"
+  checksum: "sha256=506efbe5dde56a4432828c02ea753618ff25c653f04eb71d1c664e9482f8bdd5"
+}
+extra-source "2ed032cf02.patch" {
+  src: "https://github.com/mtelvers/ocaml/commit/2ed032cf02.patch"
+  checksum: "sha256=1f3ef82399bdad2ef4032f42d6720a9092e6aa9d75ef70b0241867f75a6f2a2e"
 }

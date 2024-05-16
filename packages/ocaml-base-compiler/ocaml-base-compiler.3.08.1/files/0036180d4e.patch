@@ -1,0 +1,102 @@
+From 0036180d4e6177b84ff03d2528a95a026faa8ae8 Mon Sep 17 00:00:00 2001
+From: Mark Elvers <mark.elvers@tunbury.org>
+Date: Mon, 13 May 2024 09:31:44 +0000
+Subject: [PATCH] Allow implicit function declaration and return type
+
+---
+ config/auto-aux/hasgot     | 10 +++++++++-
+ config/auto-aux/runtest    | 16 +++++++++++++---
+ config/auto-aux/trycompile | 16 +++++++++++++---
+ configure                  |  8 ++++++++
+ 4 files changed, 43 insertions(+), 7 deletions(-)
+
+diff --git a/config/auto-aux/hasgot b/config/auto-aux/hasgot
+index 5014b903d7ad..c8f8ee10f466 100755
+--- a/config/auto-aux/hasgot
++++ b/config/auto-aux/hasgot
+@@ -1,6 +1,14 @@
+ #!/bin/sh
+ 
+-opts=""
++case "$cc" in
++  *gcc*)
++    opts="-Wno-implicit";
++    ;;
++  *)
++    opts=""
++    ;;
++esac
++
+ libs="$cclibs"
+ args=$*
+ rm -f hasgot.c
+diff --git a/config/auto-aux/runtest b/config/auto-aux/runtest
+index ce65bd07f1c5..4fd9ea622da5 100755
+--- a/config/auto-aux/runtest
++++ b/config/auto-aux/runtest
+@@ -1,8 +1,18 @@
+ #!/bin/sh
++
++case "$cc" in
++  *gcc*)
++    opts="-Wno-implicit";
++    ;;
++  *)
++    opts=""
++    ;;
++esac
++
+ if test "$verbose" = yes; then
+-echo "runtest: $cc -o tst $* $cclibs" >&2
+-$cc -o tst $* $cclibs || exit 100
++echo "runtest: $cc $opts -o tst $* $cclibs" >&2
++$cc $opts -o tst $* $cclibs || exit 100
+ else
+-$cc -o tst $* $cclibs 2> /dev/null || exit 100
++$cc $opts -o tst $* $cclibs 2> /dev/null || exit 100
+ fi
+ exec ./tst
+diff --git a/config/auto-aux/trycompile b/config/auto-aux/trycompile
+index 797a1c38697b..2368a98963db 100755
+--- a/config/auto-aux/trycompile
++++ b/config/auto-aux/trycompile
+@@ -1,7 +1,17 @@
+ #!/bin/sh
++
++case "$cc" in
++  *gcc*)
++    opts="-Wno-incompatible-pointer-types";
++    ;;
++  *)
++    opts=""
++    ;;
++esac
++
+ if test "$verbose" = yes; then
+-echo "trycompile: $cc -o tst $* $cclibs" >&2
+-$cc -o tst $* $cclibs || exit 100
++echo "trycompile: $cc $opts -o tst $* $cclibs" >&2
++$cc $opts -o tst $* $cclibs || exit 100
+ else
+-$cc -o tst $* $cclibs 2> /dev/null || exit 100
++$cc $opts -o tst $* $cclibs 2> /dev/null || exit 100
+ fi
+diff --git a/configure b/configure
+index 1ef44ea3b8d5..3743bf5bed27 100755
+--- a/configure
++++ b/configure
+@@ -232,6 +232,14 @@ EOF
+             esac;;
+ esac
+ 
++# Turn errors back into warnings for GCC 14
++
++for w in -Wno-error=unused -Wno-error=return-type; do
++  if cc="$cc" sh ./hasgot $w; then
++    gcc_warnings="$gcc_warnings $w"
++  fi
++done
++
+ # Configure the bytecode compiler
+ 
+ bytecc="$cc"
