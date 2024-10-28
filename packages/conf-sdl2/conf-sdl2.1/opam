@@ -19,6 +19,7 @@ depexts: [
   ["libsdl2-devel"] {os-distribution = "mageia"}
   ["sdl2"] {os = "openbsd"}
   ["libSDL2-devel"] {os-family = "suse" | os-family = "opensuse"}
+  ["libSDL2-devel"] {os = "win32" & os-distribution = "cygwin"}
   ["SDL2"] {os = "win32" & os-distribution = "cygwinports"}
   ["SDL2"] {os = "nixos"}
 ]
