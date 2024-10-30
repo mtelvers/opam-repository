@@ -4,7 +4,7 @@ authors: ["Sam Lantinga"]
 homepage: "http://libsdl.org/"
 bug-reports: "https://github.com/ocaml/opam-repository/issues"
 license: "Zlib"
-build: [["pkg-config" "sdl2"]]
+build: ["sh" "-exc" "pkg-config sdl2"]
 depexts: [
   ["sdl2-dev"] {os-distribution = "alpine"}
   ["sdl2"] {os-distribution = "arch"}
@@ -17,6 +17,7 @@ depexts: [
   ["sdl2"] {os = "freebsd"}
   ["sdl2"] {os = "macos" & os-distribution = "homebrew"}
   ["libsdl2-devel"] {os-distribution = "mageia"}
+  ["libSDL2-devel"] {os = "win32" & os-distribution = "cygwin"}
   ["sdl2"] {os = "openbsd"}
   ["libSDL2-devel"] {os-family = "suse" | os-family = "opensuse"}
   ["SDL2"] {os = "win32" & os-distribution = "cygwinports"}
