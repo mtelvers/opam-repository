@@ -1,0 +1,11 @@
+--- a/src/unix/lwt_io.ml
++++ b/src/unix/lwt_io.ml
+@@ -97,7 +97,7 @@
+   mutable auto_flushing : bool;
+   (* Whether the auto-flusher is currently running or not *)
+ 
+-  main : 'mode channel;
++  mutable main : 'mode channel [@ocaml.warning "-69"];
+   (* The main wrapper *)
+ 
+   close : unit Lwt.t Lazy.t;

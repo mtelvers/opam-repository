@@ -45,3 +45,5 @@ url {
   ]
 }
 x-commit-hash: "b434dd9ad488e042cf71554af7296b7bd98c9a6a"
+patches: ["letrec-biniou.1.2.2.patch"]
+extra-files: [["letrec-biniou.1.2.2.patch" "sha256=cc945d7f54b5a6af5789a6ea55fcd48623d957d8100d71dbc49ebde092474b41"]]

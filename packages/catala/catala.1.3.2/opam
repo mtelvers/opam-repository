@@ -82,3 +82,5 @@ url {
   ]
 }
 x-maintenance-intent: ["(latest)"]
+patches: ["letrec-catala.1.3.2.patch"]
+extra-files: [["letrec-catala.1.3.2.patch" "sha256=90e85935b27a83a7eb8346d3b0e8542cd3f30e1be3805f65f6a7cf0e06be0e3f"]]

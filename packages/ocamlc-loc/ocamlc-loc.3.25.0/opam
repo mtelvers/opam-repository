@@ -41,3 +41,5 @@ url {
   ]
 }
 x-commit-hash: "b845053f93d094f89c2ca933f960d853e3588e52"
+patches: ["letrec-fiber.patch"]
+extra-files: [["letrec-fiber.patch" "sha256=cec415b61da4894c7bb4eee8e4b944ce7b38d50fd12cb1cac8a18d844cb48ff1"]]

@@ -1,0 +1,33 @@
+--- a/src/ocaml/preprocess/menhirLib.ml
++++ b/src/ocaml/preprocess/menhirLib.ml
+@@ -1566,13 +1566,14 @@
+        be accessed (by a semantic action) if an epsilon production is reduced
+        when the stack is empty. *)
+ 
+-    let rec empty = {
++    let empty = Sys.opaque_identity {
+       state = s;                          (* dummy *)
+       semv = T.error_value;               (* dummy *)
+       startp = initial;                   (* dummy *)
+       endp = initial;
+-      next = empty;
++      next = Obj.magic ();
+     } in
++    Obj.set_field (Obj.repr empty) 4 (Obj.repr empty);
+ 
+     (* Build an initial environment. *)
+ 
+--- a/src/ocaml/typing/btype.ml
++++ b/src/ocaml/typing/btype.ml
+@@ -111,7 +111,10 @@
+    the only function returning the contents of a pool is [with_new_pool],
+    so that the initial pool can be added to, but never read from. *)
+ 
+-type pool = {level: int; mutable pool: transient_expr list; next: pool}
++type pool =
++  { level: int;
++    mutable pool: transient_expr list;
++    mutable next: pool [@warning "-unused-field"] }
+ (* To avoid an indirection we choose to add a dummy level at the end of
+    the list. It will never be accessed, as [pool_of_level] is always called
+    with [level >= 0]. *)

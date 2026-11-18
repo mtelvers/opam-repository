@@ -1,0 +1,11 @@
+--- a/src/note.ml
++++ b/src/note.ml
+@@ -22,7 +22,7 @@
+     { id : int; (* unique id for the source *)
+       cell : 'a C.t; (* Cell holding the source's value *)
+       mutable logrs : Logr.t list (* loggers that depend on the source *);
+-      self : t; (* self, untyped. *) }
++      mutable self : t [@warning "-69"]; (* self, untyped. *) }
+ 
+   let id (V s) = s.id
+   let cell s = s.cell

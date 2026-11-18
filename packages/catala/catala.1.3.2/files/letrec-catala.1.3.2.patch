@@ -1,0 +1,17 @@
+--- a/compiler/shared_ast/print.ml
++++ b/compiler/shared_ast/print.ml
+@@ -41,9 +41,12 @@
+ let pp_color_uchar fmt = with_color (fun fmt -> Format.pp_print_as fmt 1) fmt
+ 
+ (* Cyclic list used to choose nested paren colors *)
+-let rec colors =
++let colors =
+   let open Ocolor_types in
+-  blue :: cyan :: green :: yellow :: red :: magenta :: colors
++  let last = Sys.opaque_identity magenta :: [] in
++  let l = blue :: cyan :: green :: yellow :: red :: last in
++  Obj.set_field (Obj.repr last) 1 (Obj.repr l);
++  l
+ 
+ let keyword (fmt : Format.formatter) (s : string) : unit =
+   pp_color_string Ocolor_types.hi_magenta fmt s

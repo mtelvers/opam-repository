@@ -13,3 +13,5 @@ url {
   src: "https://github.com/ocaml/ocaml/releases/download/5.4.1/ocaml-5.4.1.tar.gz"
   checksum: "sha256=d4528517aaa1a44b8e2b1bc109a1ed0a5e0014f3ddc4feb8906b11a7e063e89a"
 }
+patches: ["letrec-ocaml-src.5.4.1.patch"]
+extra-files: [["letrec-ocaml-src.5.4.1.patch" "sha256=9d3a3a5d84b6fd80be5474381508dc91a5699c7dd9e30e0f7fd04660cfd19482"]]

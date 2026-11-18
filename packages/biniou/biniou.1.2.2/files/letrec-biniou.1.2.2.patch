@@ -1,0 +1,11 @@
+--- a/src/bi_io.ml
++++ b/src/bi_io.ml
+@@ -687,7 +687,7 @@
+     let pos = ib.i_offs + ib.i_pos in
+     let offset = Bi_vint.read_uvint ib in
+     if offset = 0 then
+-      let rec r = `Shared r in
++      let r = `Shared (Sys.opaque_identity (Obj.magic ())) in
+       Bi_share.Rd.put ib.i_shared
+         (pos, Bi_share.dummy_type_id) (Obj.repr r);
+       let x = read_tree ib in

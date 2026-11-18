@@ -1,0 +1,49 @@
+--- a/src/lib/structures/satml_types.ml
++++ b/src/lib/structures/satml_types.ml
+@@ -44,9 +44,9 @@
+        mutable vpremise : premise}
+ 
+   and atom =
+-    { var : var;
++    { mutable var : var [@warning "-69"];
+       lit : Shostak.Literal.t;
+-      neg : atom;
++      mutable neg : atom [@warning "-69"];
+       mutable watched : clause Vec.t;
+       mutable is_true : bool;
+       mutable timp : int;
+@@ -186,9 +186,9 @@
+        mutable vpremise : premise}
+ 
+   and atom =
+-    { var : var;
++    { mutable var : var [@warning "-69"];
+       lit : Shostak.Literal.t;
+-      neg : atom;
++      mutable neg : atom [@warning "-69"];
+       mutable watched : clause Vec.t;
+       mutable is_true : bool;
+       mutable timp : int;
+@@ -490,7 +490,7 @@
+   and t =
+     {view : view;
+      tag : int;
+-     neg : t
++     mutable neg : t [@warning "-69"]
+     }
+ 
+   let mk_not f = f.neg
+--- a/src/lib/structures/satml_types.mli
++++ b/src/lib/structures/satml_types.mli
+@@ -40,9 +40,9 @@
+        mutable vpremise : premise}
+ 
+   and atom =
+-    { var : var;
++    { mutable var : var [@warning "-69"];
+       lit : Shostak.Literal.t;
+-      neg : atom;
++      mutable neg : atom [@warning "-69"];
+       mutable watched : clause Vec.t;
+       mutable is_true : bool;
+       mutable timp : int;

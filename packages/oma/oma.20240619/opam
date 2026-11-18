@@ -35,3 +35,5 @@ url {
     "sha512=8f795d4ab5ead677f14e22d1ed78ef22b474da8b972894ce76cccd787e7a1a99bf7853ca6a411420c647fced173806f1ce534eae290e22852828ab3ed3f325b8"
   ]
 }
+patches: ["letrec-oma.20240619.patch"]
+extra-files: [["letrec-oma.20240619.patch" "sha256=5e8e8d25245e2b91bafba6bfbb8c3db9456319cfc08e1433f0a62e429076fe3c"]]

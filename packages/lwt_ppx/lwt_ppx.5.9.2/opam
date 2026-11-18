@@ -44,3 +44,5 @@ conflicts: [
 	"lwt" {= "6.0.0~alpha00" }
 	"lwt" {= "6.0.0~beta01" }
 ]
+patches: ["letrec-lwt.5.9.2.patch"]
+extra-files: [["letrec-lwt.5.9.2.patch" "sha256=ab01ab19107d36cc77d783b99b4b4804dedf2c94a02d946270dd9535799bc9d6"]]

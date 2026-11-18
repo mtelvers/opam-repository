@@ -1,0 +1,26 @@
+--- a/dot.ml
++++ b/dot.ml
+@@ -325,7 +325,9 @@
+ exception TestException of string * int
+ 
+ let test_data () =
+-  let rec l = 1 :: 2 :: 3 :: 4 :: 5 :: 6 :: 7 :: l in
++  let last = Sys.opaque_identity 7 :: [] in
++  let l = 1 :: 2 :: 3 :: 4 :: 5 :: 6 :: last in
++  Obj.set_field (Obj.repr last) 1 (Obj.repr l);
+   let rec drop l i =
+     if i = 0 then
+       l
+--- a/sexpr.ml
++++ b/sexpr.ml
+@@ -234,7 +234,9 @@
+ exception TestException of string * int
+   
+ let rec test_data () =
+-  let rec l = 1 :: 2 :: 3 :: 4 :: 5 :: 6 :: 7 :: l in
++  let last = Sys.opaque_identity 7 :: [] in
++  let l = 1 :: 2 :: 3 :: 4 :: 5 :: 6 :: last in
++  Obj.set_field (Obj.repr last) 1 (Obj.repr l);
+   let rec drop l i =
+     if i = 0 then
+       l

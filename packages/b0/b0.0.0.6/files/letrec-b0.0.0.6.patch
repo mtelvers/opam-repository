@@ -1,0 +1,11 @@
+--- a/src/file/b0_meta.ml
++++ b/src/file/b0_meta.ml
+@@ -16,7 +16,7 @@
+       name : string;
+       pp_value : 'a Fmt.t;
+       scope : B0_scope.t;
+-      untyped : t; }
++      mutable untyped : t [@warning "-69"]; }
+ 
+   let[@inline] uid k = Type.Id.uid k.id
+ 

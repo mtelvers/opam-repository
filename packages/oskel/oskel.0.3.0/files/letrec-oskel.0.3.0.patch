@@ -1,0 +1,24 @@
+--- a/lib/oskel.ml
++++ b/lib/oskel.ml
+@@ -7,7 +7,8 @@
+   let ( >>= ) = Lwt.bind in
+   let finished = ref false in
+   let active = ref false in
+-  let rec frames =
++  let last = Sys.opaque_identity "⠏" :: [] in
++  let frames =
+     "⠋"
+     :: "⠙"
+     :: "⠹"
+@@ -17,9 +18,9 @@
+     :: "⠦"
+     :: "⠧"
+     :: "⠇"
+-    :: "⠏"
+-    :: frames
++    :: last
+   in
++  Obj.set_field (Obj.repr last) 1 (Obj.repr frames);
+   let rec loop frames =
+     if !finished then Lwt.return ()
+     else

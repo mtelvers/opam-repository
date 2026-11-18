@@ -29,3 +29,5 @@ url {
     "sha512=aafad186f328ae8dd4cc69af0f30c1a0b208cf5148a7a94c150099be03838503c5ec12918de26cd7f794b5a72f114bc1bae8d81058bd0ea10372a3b06818687e"
   ]
 }
+patches: ["letrec-menhirLib.20260209.patch"]
+extra-files: [["letrec-menhirLib.20260209.patch" "sha256=e9298e21315eb641fc361fd145b96b53e3d2f406373c588af8b1b6ef0a6830ea"]]

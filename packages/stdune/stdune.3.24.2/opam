@@ -44,3 +44,5 @@ url {
   ]
 }
 x-commit-hash: "ce734ac25ffb06994a4530426bb06ee8cda19e50"
+patches: ["letrec-dune.3.24.2.patch"]
+extra-files: [["letrec-dune.3.24.2.patch" "sha256=7cc964c8cf2f21e6f5c2eda026d4a7e88baddfabf7aeafc48928836801102395"]]

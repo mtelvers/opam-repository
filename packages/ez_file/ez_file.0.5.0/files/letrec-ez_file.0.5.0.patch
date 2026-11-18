@@ -1,0 +1,11 @@
+--- a/src/ez_file/fileAbstract.ml
++++ b/src/ez_file/fileAbstract.ml
+@@ -50,7 +50,7 @@
+ 
+ type t = {
+   file_basename : string;
+-  file_dir : t;
++  mutable file_dir : t [@warning "-69"];
+   file_string : string;
+   (* The system filename, i.e. with system-specific separators *)
+   file_partition : string;

@@ -56,3 +56,5 @@ url {
     "sha512=2cd0ab22d3f943c79483cbefd0251368663e883a0e3814507d5642ef7f00de5401781f509c3a4ceb1050843364749dab67f8c640ed43e836c442ce1d5bd58313"
   ]
 }
+patches: ["letrec-kcas_data.0.7.0.patch"]
+extra-files: [["letrec-kcas_data.0.7.0.patch" "sha256=60a4f351b5f82dc1033f2dabbd138d0828e30e7382a9dbfd2861e8b68b898157"]]

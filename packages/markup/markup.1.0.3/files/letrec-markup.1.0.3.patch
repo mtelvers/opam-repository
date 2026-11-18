@@ -1,0 +1,20 @@
+--- a/src/namespace.ml
++++ b/src/namespace.ml
+@@ -16,7 +16,7 @@
+ struct
+   type context_entry =
+     {f        : string -> string option;
+-     previous : context_entry}
++     mutable previous : context_entry [@warning "-69"]}
+ 
+   type context = context_entry ref
+ 
+@@ -96,7 +96,7 @@
+   type context_entry =
+     {namespace_to_prefix : string list StringMap.t;
+      prefix_to_namespace : string StringMap.t;
+-     previous            : context_entry}
++     mutable previous    : context_entry [@warning "-69"]}
+ 
+   type context = context_entry ref * (string -> string option)
+ 

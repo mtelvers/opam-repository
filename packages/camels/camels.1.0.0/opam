@@ -35,3 +35,5 @@ url {
   ]
 }
 x-commit-hash: "b01d507924e1a400c6b4ce5b4aba7e58d3d7cf70"
+patches: ["letrec-camels.1.0.0.patch"]
+extra-files: [["letrec-camels.1.0.0.patch" "sha256=652e2eca9b0615f8a2c416d3a234bc12d1ab691f5775e802b4e5948691d92a82"]]

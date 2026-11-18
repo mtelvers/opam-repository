@@ -40,3 +40,5 @@ url {
   ]
 }
 x-commit-hash: "03c8e3f0cef88ead9f217c35af89523eeaf095d3"
+patches: ["letrec-merlin-lib.5.7.1-504.patch"]
+extra-files: [["letrec-merlin-lib.5.7.1-504.patch" "sha256=fc74645d4d44400e34dedfc7aa9caccbe80eda8e6db27eed2da827d1c7c5efed"]]

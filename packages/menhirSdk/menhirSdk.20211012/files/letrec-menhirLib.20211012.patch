@@ -1,0 +1,19 @@
+--- a/lib/Engine.ml
++++ b/lib/Engine.ml
+@@ -478,13 +478,14 @@
+        be accessed (by a semantic action) if an epsilon production is reduced
+        when the stack is empty. *)
+ 
+-    let rec empty = {
++    let empty = Sys.opaque_identity {
+       state = s;                          (* dummy *)
+       semv = T.error_value;               (* dummy *)
+       startp = initial;                   (* dummy *)
+       endp = initial;
+-      next = empty;
++      next = Obj.magic ();
+     } in
++    Obj.set_field (Obj.repr empty) 4 (Obj.repr empty);
+ 
+     (* Build an initial environment. *)
+ 

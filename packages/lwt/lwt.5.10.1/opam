@@ -63,3 +63,5 @@ url {
     "sha512=361b4fe8b1613683a0cd89fea08d9ae1615f84e771363ba97843c2dda5c3f45b4a4b6c048c8d79fa58d609c45a7e1dfa2b3e9873d02bac82934fd892f8f4fce1"
   ]
 }
+patches: ["letrec-lwt.5.10.1.patch"]
+extra-files: [["letrec-lwt.5.10.1.patch" "sha256=ab01ab19107d36cc77d783b99b4b4804dedf2c94a02d946270dd9535799bc9d6"]]

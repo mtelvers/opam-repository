@@ -37,3 +37,5 @@ url {
   ]
 }
 x-commit-hash: "01f57c4e1183246d2fec1fb71e67faddfd269123"
+patches: ["letrec-grenier.0.17.patch"]
+extra-files: [["letrec-grenier.0.17.patch" "sha256=9620c4bfc382baf8e7c039115aaecb881e226034c8e4db6d8798d0a034f16fd9"]]

@@ -1,0 +1,13 @@
+--- a/src/kcas_data/elems.ml
++++ b/src/kcas_data/elems.ml
+@@ -1,6 +1,9 @@
+ type 'a t = { value : 'a; tl : 'a t; length : int }
+ 
+-let rec empty = { value = Obj.magic (); tl = empty; length = 0 }
++let empty =
++  let e = Sys.opaque_identity { value = Obj.magic (); tl = Obj.magic (); length = 0 } in
++  Obj.set_field (Obj.repr e) 1 (Obj.repr e);
++  e
+ let[@inline] singleton value = { value; tl = empty; length = 1 }
+ let[@inline] tl_safe { tl; _ } = tl
+ let[@inline] tl_or_retry t = if t != empty then t.tl else Kcas.Retry.later ()

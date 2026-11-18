@@ -25,3 +25,5 @@ url {
     "sha512=51c133cefe8550125e7b1db18549e893bac15663fdd7a9fac87235c07de755f39eab9fc3cfdf6571612fd79b3d5b22f49f459581b480c7349bacddf2618c8a99"
   ]
 }
+patches: ["letrec-msat.0.9.1.patch"]
+extra-files: [["letrec-msat.0.9.1.patch" "sha256=cc6d6ee9fb256d805908e957b1a86f4574a107859a32a8f6f05634440dfa70c7"]]

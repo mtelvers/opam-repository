@@ -52,3 +52,5 @@ url {
     "md5=3609724f5408dff41b1cb43107bc24ef"
   ]
 }
+patches: ["letrec-markup.1.0.3.patch"]
+extra-files: [["letrec-markup.1.0.3.patch" "sha256=e9b9272a76064424d716939700e9ca32849d50384bb2e29556bdb8c1b623e89d"]]

@@ -1,0 +1,55 @@
+--- a/asmcomp/mach.ml
++++ b/asmcomp/mach.ml
+@@ -71,7 +71,7 @@
+ 
+ type instruction =
+   { desc: instruction_desc;
+-    next: instruction;
++    mutable next: instruction;
+     arg: Reg.t array;
+     res: Reg.t array;
+     dbg: Debuginfo.t;
+--- a/asmcomp/mach.mli
++++ b/asmcomp/mach.mli
+@@ -72,7 +72,7 @@
+ 
+ type instruction =
+   { desc: instruction_desc;
+-    next: instruction;
++    mutable next: instruction;
+     arg: Reg.t array;
+     res: Reg.t array;
+     dbg: Debuginfo.t;
+--- a/boot/menhir/menhirLib.ml
++++ b/boot/menhir/menhirLib.ml
+@@ -1581,13 +1581,14 @@
+        be accessed (by a semantic action) if an epsilon production is reduced
+        when the stack is empty. *)
+ 
+-    let rec empty = {
++    let empty = Sys.opaque_identity {
+       state = s;                          (* dummy *)
+       semv = T.error_value;               (* dummy *)
+       startp = initial;                   (* dummy *)
+       endp = initial;
+-      next = empty;
++      next = Obj.magic ();
+     } in
++    Obj.set_field (Obj.repr empty) 4 (Obj.repr empty);
+ 
+     (* Build an initial environment. *)
+ 
+--- a/typing/btype.ml
++++ b/typing/btype.ml
+@@ -111,7 +111,10 @@
+    the only function returning the contents of a pool is [with_new_pool],
+    so that the initial pool can be added to, but never read from. *)
+ 
+-type pool = {level: int; mutable pool: transient_expr list; next: pool}
++type pool =
++  { level: int;
++    mutable pool: transient_expr list;
++    mutable next: pool [@warning "-unused-field"] }
+ (* To avoid an indirection we choose to add a dummy level at the end of
+    the list. It will never be accessed, as [pool_of_level] is always called
+    with [level >= 0]. *)

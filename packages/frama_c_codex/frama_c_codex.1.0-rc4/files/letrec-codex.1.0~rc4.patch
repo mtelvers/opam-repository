@@ -1,0 +1,17 @@
+--- a/domains/assert_false_domain.ml
++++ b/domains/assert_false_domain.ml
+@@ -166,12 +166,12 @@
+   [@@@ocaml.warning "-69"]
+ 
+   type mu_context = {
+-    mu_ctx: context;              (* Context corresponding to this mu_context *)
++    mutable mu_ctx: context [@warning "-69"];              (* Context corresponding to this mu_context *)
+     mu_parent_ctx: context;       (* Parent of the current context. *)
+   }
+ 
+   and root_context = {
+-    root_ctx: context;            (* Context corresponding to this root_context *)
++    mutable root_ctx: context [@warning "-69"];            (* Context corresponding to this root_context *)
+   }
+ 
+   and context_ =

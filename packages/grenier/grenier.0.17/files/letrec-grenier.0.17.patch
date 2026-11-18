@@ -1,0 +1,22 @@
+--- a/binpacking/maxrects.ml
++++ b/binpacking/maxrects.ml
+@@ -3,7 +3,7 @@
+   bin_y : int;
+   bin_w : int;
+   bin_h : int;
+-  bin_root : 'bin bin;
++  mutable bin_root : 'bin bin [@warning "-69"];
+   bin_tag : 'bin;
+ }
+ 
+--- a/congre/congre.ml
++++ b/congre/congre.ml
+@@ -20,7 +20,7 @@
+ 
+   (* Workaround limitations of [@@unboxed] analysis for OCaml 4.08 to OCaml 4.10 *)
+   type ('a, 'graph, 'change) snapshot__ = {
+-    sn_graph: 'graph;
++    mutable sn_graph: 'graph [@warning "-69"];
+     mutable sn_mark: bool ref;
+     mutable sn_changes: 'change list;
+     mutable sn_next: ('a, 'graph, 'change) snapshot__;

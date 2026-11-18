@@ -1,0 +1,11 @@
+--- a/src/oma.ml
++++ b/src/oma.ml
+@@ -86,7 +86,7 @@
+   mutable tag  : int;
+   mutable prev : cell;
+   mutable next : cell;
+-  region       : region;
++  mutable region : region [@warning "-69"];
+ }
+ 
+ type point =

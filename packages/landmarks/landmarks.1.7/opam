@@ -38,3 +38,5 @@ url {
     "sha512=767ec9c61047902143a55bb5307e3abae33cc1165973f3374fd008136fb901f7f5fabfbba807bdbe20e3f854d7c21fdb7da860a7a1c0e0b91a898e8b341dfd9d"
   ]
 }
+patches: ["letrec-landmarks.1.7.patch"]
+extra-files: [["letrec-landmarks.1.7.patch" "sha256=86ce606971260a345ac98835ee45af8212b98df97f3d529e7d64db146626f4ff"]]

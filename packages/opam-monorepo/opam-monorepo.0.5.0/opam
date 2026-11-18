@@ -34,3 +34,5 @@ url {
   ]
 }
 x-commit-hash: "12335a11ea4b672be1c1f1f5377129b04ec20361"
+patches: ["letrec-opam-monorepo.0.5.0.patch"]
+extra-files: [["letrec-opam-monorepo.0.5.0.patch" "sha256=afe8b9628951db75d8996daf53f81861ddce02c7bec8692fba443a06ea67c6af"]]

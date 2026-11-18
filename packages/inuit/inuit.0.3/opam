@@ -31,3 +31,5 @@ url {
     "md5=13ddd022196286655e0e971fe28aa1b1"
   ]
 }
+patches: ["letrec-inuit.0.3.patch"]
+extra-files: [["letrec-inuit.0.3.patch" "sha256=6b6f75aa90f47bbed0718a10f7dac443e955a93338a928e193306d31eeedc815"]]

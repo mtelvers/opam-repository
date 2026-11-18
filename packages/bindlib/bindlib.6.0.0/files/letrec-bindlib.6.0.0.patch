@@ -1,0 +1,11 @@
+--- a/lib/bindlib.ml
++++ b/lib/bindlib.ml
+@@ -120,7 +120,7 @@
+   var_key    : int;          (* Unique identifier.          *)
+   var_name   : string;       (* Name as a free variable.    *)
+   var_mkfree : 'a var -> 'a; (* Function to build a term.   *)
+-  var_box    : 'a box;       (* Variable as a boxed object. *)
++  mutable var_box : 'a box [@warning "-69"]; (* Variable as a boxed object. *)
+ }
+ 
+ (* Variable of any type (using an existential). In principle, this constructor

@@ -40,3 +40,5 @@ url {
   ]
 }
 x-commit-hash: "05511c3e6c3c2a792f36852a7f8c57a107c452c8"
+patches: ["letrec-melange.6.0.1-54.patch"]
+extra-files: [["letrec-melange.6.0.1-54.patch" "sha256=057225d040b8f559fc556b5953feb717457a75768f799ece84292ed672eb6309"]]

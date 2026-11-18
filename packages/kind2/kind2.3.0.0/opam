@@ -48,3 +48,5 @@ url {
     "sha512=61bcf3260a3817b0159497bb199b44ce8ea615acdbe3f3af10425bb731dc9ca41d2a1a73a4f0b24c867843d095c9654b716f38ee1fcbb24e364dd7e6d5abf792"
   ]
 }
+patches: ["letrec-kind2.3.0.0.patch"]
+extra-files: [["letrec-kind2.3.0.0.patch" "sha256=01645ccb7417d4023fe84e10a67d98a702eee5bf47099a9df25e7c736e6def7e"]]

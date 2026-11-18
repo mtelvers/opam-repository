@@ -45,3 +45,5 @@ url {
     "sha512=ef0353a1b34c9790bd46e964773540a6642253d9eb6a6d57a2e80c54ac9de730d4b79540603fd6aea8ed321455b5a13d6ec8bd380c32e7bb17fe0e400360e90d"
   ]
 }
+patches: ["letrec-bindlib.6.0.0.patch"]
+extra-files: [["letrec-bindlib.6.0.0.patch" "sha256=0a32e9498a3200e4c394af9535b14da14b44e04e7baec3ec97c4e996bbdf34d5"]]

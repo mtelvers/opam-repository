@@ -1,0 +1,13 @@
+--- a/src/core/Internal.ml
++++ b/src/core/Internal.ml
+@@ -54,8 +54,8 @@
+ 
+   and atom = {
+     aid : int;
+-    var : var;
+-    neg : atom;
++    mutable var : var [@warning "-69"];
++    mutable neg : atom [@warning "-69"];
+     lit : formula;
+     mutable is_true : bool;
+     watched : clause Vec.t;

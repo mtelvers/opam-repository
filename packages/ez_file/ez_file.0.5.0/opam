@@ -50,3 +50,5 @@ url {
     "sha512=d20a395ef0e08cafdd9fc64828dfc665924b8acde62f7c4503e9f88c3b6be23ce40d70e6ef4e457ea0800de112e9749fec4903c1c8e40ed72b45a8e46391dfa8"
   ]
 }
+patches: ["letrec-ez_file.0.5.0.patch"]
+extra-files: [["letrec-ez_file.0.5.0.patch" "sha256=c329dd1807333359947294da6a1f35c7b4affc28aa5cee8fe7f453137b12d26f"]]

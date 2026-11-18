@@ -1,0 +1,17 @@
+--- a/terminal/board.ml
++++ b/terminal/board.ml
+@@ -3,10 +3,10 @@
+ 
+ type node = {
+   control : control;
+-  left : node option;
+-  right : node option;
+-  up : node option;
+-  down : node option;
++  mutable left : node option [@warning "-69"];
++  mutable right : node option [@warning "-69"];
++  mutable up : node option [@warning "-69"];
++  mutable down : node option [@warning "-69"];
+ }
+ 
+ type controls = {

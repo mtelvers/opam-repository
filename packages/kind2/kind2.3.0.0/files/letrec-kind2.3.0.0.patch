@@ -1,0 +1,22 @@
+--- a/src/property.ml
++++ b/src/property.ml
+@@ -53,7 +53,7 @@
+     prop_name : string;
+ 
+     (* Source of the property *)
+-    prop_source : prop_source;
++    mutable prop_source : prop_source [@warning "-69"];
+ 
+     (* Kind of property (do we wish to prove it invariant or reachable) *)
+     prop_kind : prop_kind ;
+--- a/src/property.mli
++++ b/src/property.mli
+@@ -47,7 +47,7 @@
+   prop_name : string ;
+   (** Identifier for the property *)
+ 
+-  prop_source : prop_source ;
++  mutable prop_source : prop_source ;
+   (** Source of the property *)
+ 
+   prop_kind : prop_kind ;

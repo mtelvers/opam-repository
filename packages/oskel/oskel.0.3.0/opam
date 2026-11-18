@@ -47,3 +47,5 @@ url {
     "sha512=228b11bd586b322f0306a08448ef800fc067e4e8979a812590c4bda50ea499d055fb0ecd429ad73caba599fdcd98da8d2ad1fb42253a3d1c6a3ea9737f213cdb"
   ]
 }
+patches: ["letrec-oskel.0.3.0.patch"]
+extra-files: [["letrec-oskel.0.3.0.patch" "sha256=4840d0533c6f7b4e98ceeb6a22c3474dd7f04ad5b447648c9e017787becf12b0"]]

@@ -39,3 +39,5 @@ url {
     "sha512=6d2f4866e06601f9e7e43ac6378f05a3ea915c94548d5a6c96e2fb2adc2c6cff233ffa56862ca7be809c2d2114ed9335c22fb7d768adf7fae5460bb52de3f938"
   ]
 }
+patches: ["letrec-lwt.6.0.0.patch"]
+extra-files: [["letrec-lwt.6.0.0.patch" "sha256=ab01ab19107d36cc77d783b99b4b4804dedf2c94a02d946270dd9535799bc9d6"]]

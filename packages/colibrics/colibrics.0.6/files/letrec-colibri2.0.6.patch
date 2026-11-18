@@ -1,0 +1,11 @@
+--- a/colibri2/core/egraph.ml
++++ b/colibri2/core/egraph.ml
+@@ -182,7 +182,7 @@
+ 
+   (** delayed_t is used *)
+   and 'a delayed_t = {
+-    env: t;
++    mutable env: t [@warning "-69"];
+     todo_immediate_dem : action_immediate_dem Queue.t;
+     todo_merge_dom : action_merge_dom Queue.t;
+     mutable todo_delayed_merge : (Node.t * Node.t * bool) option;

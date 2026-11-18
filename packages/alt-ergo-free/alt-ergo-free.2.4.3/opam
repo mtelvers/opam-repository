@@ -51,3 +51,5 @@ url {
     "md5=555b7e69a3c33917573896a527ac7505"
   ]
 }
+patches: ["letrec-alt-ergo-free.2.4.3.patch"]
+extra-files: [["letrec-alt-ergo-free.2.4.3.patch" "sha256=a398cc80c347fa3795463fbee8c62c2497a21d993be81ba099ae51ad4ba05b74"]]

@@ -38,3 +38,5 @@ url {
   ]
 }
 x-commit-hash: "0380c5965ac3a0596293301bf25e853c45762c46"
+patches: ["letrec-colibri2.0.6.patch"]
+extra-files: [["letrec-colibri2.0.6.patch" "sha256=0f571f5477475040eb68f3a4b354c0cc5d821bca946ea36189fb2cfd53e37156"]]

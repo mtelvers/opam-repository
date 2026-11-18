@@ -57,3 +57,5 @@ url {
     "sha512=e9aa779e66c08fc763019f16d4706f465d16c05d6400b58fbd0313317ef33ddea51952e2b058db28e65f7ddb7012f328c8bf02d8f1da17bb543348541a2587f0"
 }
 x-maintenance-intent: ["(latest)"]
+patches: ["letrec-b0.0.0.6.patch"]
+extra-files: [["letrec-b0.0.0.6.patch" "sha256=4a041d8118c9f14794047749e9f09791d2e063462ff2afb575db841a03ea622e"]]

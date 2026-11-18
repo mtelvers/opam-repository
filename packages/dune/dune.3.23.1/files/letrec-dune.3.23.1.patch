@@ -1,0 +1,20 @@
+--- a/src/fiber/src/core.ml
++++ b/src/fiber/src/core.ml
+@@ -42,7 +42,7 @@
+ and value = ..
+ 
+ and context =
+-  { parent : context
++  { mutable parent : context [@warning "-unused-field"]
+   ; on_error : Exn_with_backtrace.t k
+   ; vars : Var_map.t
+   ; map_reduce_context : map_reduce_context
+@@ -60,7 +60,7 @@
+ 
+ and 'a k =
+   { run : 'a -> eff
+-  ; ctx : context
++  ; mutable ctx : context [@warning "-unused-field"]
+   }
+ 
+ let return x k = k x

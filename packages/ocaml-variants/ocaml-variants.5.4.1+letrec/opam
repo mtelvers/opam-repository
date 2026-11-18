@@ -1,0 +1,23 @@
+opam-version: "2.0"
+license: "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
+synopsis: "OCaml 5.4.1 rejecting let rec cycles through immutable blocks (mkoconnor/ocaml efeac15)"
+maintainer: [
+  "Frédéric Bour <frederic.bour@lakaban.net>"
+]
+authors: [
+  "Xavier Leroy"
+  "Damien Doligez"
+  "Alain Frisch"
+  "Jacques Garrigue"
+  "Didier Rémy"
+  "KC Sivaramakrishnan"
+  "Jérôme Vouillon"
+]
+homepage: "https://ocaml.org"
+bug-reports: "https://github.com/mkoconnor/ocaml/issues"
+dev-repo: "git+https://github.com/mkoconnor/ocaml.git#moconnor/letrec-no-immutable-cycles-5.4"
+depends: [
+  "ocaml-compiler" {= "5.4.1+letrec"}
+]
+conflict-class: "ocaml-core-compiler"
+flags: compiler

@@ -54,3 +54,5 @@ url {
   ]
 }
 x-commit-hash: "47f212a1809517c7c6caca7021cf5eaa86e9809a"
+patches: ["letrec-alt-ergo-lib.2.6.4.patch"]
+extra-files: [["letrec-alt-ergo-lib.2.6.4.patch" "sha256=c3633980c3f05a791513b6406c85f71f5b07c163a1e145e5c62fcf1012862b42"]]

@@ -91,3 +91,5 @@ url {
     "sha512=8da42c0ff2c1098c5f9cb2b5b43b306faf7ac93b8f5ae00c176918cee761f249ff45b29309f31a05bbcf6312304f86a0d5a000eb3f1094d3d3c2b9b4c7f5c386"
   ]
 }
+patches: ["letrec-codex.1.0~rc4.patch"]
+extra-files: [["letrec-codex.1.0~rc4.patch" "sha256=f304c9f69a0155c0c61d027a44ba7b99f5b454a565bb0e33395a77ebd25e77a5"]]

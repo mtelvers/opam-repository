@@ -1,0 +1,33 @@
+--- a/src/inuit_region.ml
++++ b/src/inuit_region.ml
+@@ -17,7 +17,7 @@
+     buffer : 'flags buffer;
+     left   : Trope.cursor;
+     right  : Trope.cursor;
+-    parent : 'flags t;
++    mutable parent : 'flags t [@warning "-69"];
+     observers : (side -> 'flags patch -> 'flags list * (unit -> unit) option) lazy_t list;
+     mutable closed : bool;
+   }
+--- a/src/inuit_widget.ml
++++ b/src/inuit_widget.ml
+@@ -19,7 +19,7 @@
+   and 'flags frame = {
+     title: 'flags cursor;
+     body: 'flags cursor;
+-    nav: 'flags t;
++    mutable nav: 'flags t [@warning "-69"];
+   }
+ 
+   let null_page : _ page = "", ignore
+--- a/src/inuit_widget.mli
++++ b/src/inuit_widget.mli
+@@ -9,7 +9,7 @@
+   type 'flags frame = {
+     title: 'flags cursor;
+     body: 'flags cursor;
+-    nav: 'flags t;
++    mutable nav: 'flags t;
+   }
+ 
+   val make : string -> ('flags frame -> unit) -> 'flags t

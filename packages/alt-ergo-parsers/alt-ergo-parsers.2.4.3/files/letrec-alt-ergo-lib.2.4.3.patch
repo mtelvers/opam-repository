@@ -1,0 +1,49 @@
+--- a/src/lib/structures/satml_types.ml
++++ b/src/lib/structures/satml_types.ml
+@@ -52,9 +52,9 @@
+        mutable vpremise : premise}
+ 
+   and atom =
+-    { var : var;
++    { mutable var : var [@warning "-69"];
+       lit : E.t;
+-      neg : atom;
++      mutable neg : atom [@warning "-69"];
+       mutable watched : clause Vec.t;
+       mutable is_true : bool;
+       mutable timp : int;
+@@ -189,9 +189,9 @@
+        mutable vpremise : premise}
+ 
+   and atom =
+-    { var : var;
++    { mutable var : var [@warning "-69"];
+       lit : E.t;
+-      neg : atom;
++      mutable neg : atom [@warning "-69"];
+       mutable watched : clause Vec.t;
+       mutable is_true : bool;
+       mutable timp : int;
+@@ -495,7 +495,7 @@
+   and t =
+     {view : view;
+      tag : int;
+-     neg : t
++     mutable neg : t [@warning "-69"]
+     }
+ 
+   let mk_not f = f.neg
+--- a/src/lib/structures/satml_types.mli
++++ b/src/lib/structures/satml_types.mli
+@@ -44,9 +44,9 @@
+        mutable vpremise : premise}
+ 
+   and atom =
+-    { var : var;
++    { mutable var : var [@warning "-69"];
+       lit : Expr.t;
+-      neg : atom;
++      mutable neg : atom [@warning "-69"];
+       mutable watched : clause Vec.t;
+       mutable is_true : bool;
+       mutable timp : int;
